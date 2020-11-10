@@ -16,7 +16,7 @@ end;
 create table payment
 (
     id           number(19)           not null,
-    payment_number nvarchar(200)        not null,
+    payment_number nvarchar2(200)        not null,
     order_id        number (19)         not null,
     total       nvarchar2(200)       not null,
 

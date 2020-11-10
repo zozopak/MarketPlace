@@ -18,11 +18,10 @@ create table classification
     id           number(19)           not null,
     category_id  number(19)           not null,
     status       nvarchar2(200)       not null,
-
-    remarks      nvarchar2(400),
+    remarks      nvarchar2(400) ,
     lock_version number(19) default 1 not null,
-    constraint classification_pk_id primary key (id)
-    constraint classification_fk_id foreign key (category_id)references category(id)
+    constraint classification_pk_id primary key (id),
+    constraint classification_fk_category_id foreign key (category_id)references category(id)
 
 );
 /

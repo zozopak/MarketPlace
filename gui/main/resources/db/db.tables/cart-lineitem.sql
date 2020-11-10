@@ -15,13 +15,12 @@ end;
 
 create table cart_lineitem
 (
-    car_id number(19)   not null ,
-    lineitem_id    number(19)   not null,
+    cart_id      number(19)           not null,
+    lineitem_id  number(19)           not null,
 
     remarks      nvarchar2(400),
     lock_version number(19) default 1 not null,
-    constraint cart_lineitem_pk_id primary key (cart_id,lineitem_id)
-
+    constraint cart_lineitem_pk_id primary key (cart_id, lineitem_id)
 
 
 );

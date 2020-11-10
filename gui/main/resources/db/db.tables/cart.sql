@@ -16,12 +16,12 @@ end;
 create table cart
 (
     id           number(19)           not null,
-    date         DATE                  not null,
-    customer_id   number(19)   not null,
+    cartdate     DATE                 not null,
+    customer_id  number(19)           not null,
     remarks      nvarchar2(400),
     lock_version number(19) default 1 not null,
     constraint cart_pk_id primary key (id),
-    constraint cart_fk_customer_id foreign key (customer_id) references customer(id)
+    constraint cart_fk_customer_id foreign key (customer_id) references customer (id)
 
 
 );

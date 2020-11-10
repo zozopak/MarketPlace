@@ -16,9 +16,7 @@ end;
 create table category
 (
     id           number(19)           not null,
-
     status       nvarchar2(200)       not null,
-
     remarks      nvarchar2(400),
     lock_version number(19) default 1 not null,
     constraint category_pk_id primary key (id)
