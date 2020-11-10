@@ -11,6 +11,7 @@ public class Classification {
     private String status;
     private String remarks;
     private long lockVersion;
+    private long categoryId;
 
     @Id
     @Column(name = "ID")
@@ -74,5 +75,15 @@ public class Classification {
         result = 31 * result + (remarks != null ? remarks.hashCode() : 0);
         result = 31 * result + (int) (lockVersion ^ (lockVersion >>> 32));
         return result;
+    }
+
+    @Basic
+    @Column(name = "CATEGORY_ID")
+    public long getCategoryId() {
+        return categoryId;
+    }
+
+    public void setCategoryId(long categoryId) {
+        this.categoryId = categoryId;
     }
 }

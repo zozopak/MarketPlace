@@ -15,22 +15,21 @@ end;
 
 create table customer
 (
-    id        number(19)    not null ,
-    customer_number nvarchar2(200) not null ,
-    firstname    nvarchar2(200) not null ,
-   lastname    nvarchar2(200) not null ,
-   phone  nvarchar2(200) not null ,
-   national_id  nvarchar2(200) not null ,
-   email    nvarchar2(200)     not null.
-    wallet_id  number(19)   not null ,
+    id              number(19)           not null,
+    customer_number nvarchar2(200)       not null,
+    firstname       nvarchar2(200)       not null,
+    lastname        nvarchar2(200)       not null,
+    phone           nvarchar2(200)       not null,
+    national_id     nvarchar2(200)       not null,
+    email           nvarchar2(200)       not null,
+    wallet_id       number(19)           not null,
 
 
-    remarks       nvarchar2(400),
-    lock_version  number(19) default 1 not null,
+    remarks         nvarchar2(400),
+    lock_version    number(19) default 1 not null,
     constraint customer_pk_id primary key (id),
-    constraint customer_un_national_id unique   (national_id),
-    constraint customer_fk_wallet_id foreign key (wallet_id) references wallet(id),
-
+    constraint customer_un_national_id unique (national_id),
+    constraint customer_fk_wallet_id foreign key (wallet_id) references wallet (id)
 
 
 );

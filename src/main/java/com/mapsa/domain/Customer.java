@@ -33,6 +33,10 @@ public class Customer {
         return customerNumber;
     }
 
+    public void setCustomerNumber(String customerNumber) {
+        this.customerNumber = customerNumber;
+    }
+
     public void setCustomerNumber(long customerNumber) {
         this.customerNumber = customerNumber;
     }

@@ -11,6 +11,7 @@ public class Orders {
     private long orderStatusId;
     private long lockVersion;
     private Cart cartByCartId;
+    private long cartId;
 
     @Id
     @Column(name = "ID")
@@ -96,5 +97,15 @@ public class Orders {
 
     public void setCartByCartId(Cart cartByCartId) {
         this.cartByCartId = cartByCartId;
+    }
+
+    @Basic
+    @Column(name = "CART_ID")
+    public long getCartId() {
+        return cartId;
+    }
+
+    public void setCartId(long cartId) {
+        this.cartId = cartId;
     }
 }

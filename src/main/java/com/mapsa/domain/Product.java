@@ -13,6 +13,8 @@ public class Product {
     private long lockVersion;
     private Category categoryByCategoryId;
     private Lineitem lineitemByLineitemId;
+    private long categoryId;
+    private long lineitemId;
 
     @Id
     @Column(name = "ID")
@@ -133,5 +135,25 @@ public class Product {
 
     public void setLineitemByLineitemId(Lineitem lineitemByLineitemId) {
         this.lineitemByLineitemId = lineitemByLineitemId;
+    }
+
+    @Basic
+    @Column(name = "CATEGORY_ID")
+    public long getCategoryId() {
+        return categoryId;
+    }
+
+    public void setCategoryId(long categoryId) {
+        this.categoryId = categoryId;
+    }
+
+    @Basic
+    @Column(name = "LINEITEM_ID")
+    public long getLineitemId() {
+        return lineitemId;
+    }
+
+    public void setLineitemId(long lineitemId) {
+        this.lineitemId = lineitemId;
     }
 }

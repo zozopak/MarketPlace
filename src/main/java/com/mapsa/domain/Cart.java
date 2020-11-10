@@ -12,6 +12,7 @@ public class Cart {
     private Time cartDate;
     private String remarks;
     private long lockVersion;
+    private Time cartdate;
 
     @Id
     @Column(name = "ID")
@@ -75,5 +76,15 @@ public class Cart {
         result = 31 * result + (remarks != null ? remarks.hashCode() : 0);
         result = 31 * result + (int) (lockVersion ^ (lockVersion >>> 32));
         return result;
+    }
+
+    @Basic
+    @Column(name = "CARTDATE")
+    public Time getCartdate() {
+        return cartdate;
+    }
+
+    public void setCartdate(Time cartdate) {
+        this.cartdate = cartdate;
     }
 }

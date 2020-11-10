@@ -12,6 +12,7 @@ public class Payment {
     private String total;
     private String remarks;
     private long lockVersion;
+    private long orderId;
 
     @Id
     @Column(name = "ID")
@@ -88,5 +89,15 @@ public class Payment {
         result = 31 * result + (remarks != null ? remarks.hashCode() : 0);
         result = 31 * result + (int) (lockVersion ^ (lockVersion >>> 32));
         return result;
+    }
+
+    @Basic
+    @Column(name = "ORDER_ID")
+    public long getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(long orderId) {
+        this.orderId = orderId;
     }
 }
