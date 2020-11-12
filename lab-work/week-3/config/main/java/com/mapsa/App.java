@@ -9,7 +9,7 @@ public class App {
         UserC user =  context.getBean("user",UserC.class);
         user.setName("ali");
         user.setLastName("esmaili");
-        ProductC product =context.getBean("product", ProductC.class);
+        City product =context.getBean("product", City.class);
         product.setName("product1");
         user.setProduct(product);
         System.out.println(user);

@@ -6,13 +6,13 @@ import org.springframework.stereotype.Component;
 public class UserC {
     private String name;
     private String lastName;
-    private ProductC product;
+    private City product;
 
-    public ProductC getProduct() {
+    public City getProduct() {
         return product;
     }
 
-    public void setProduct(ProductC product) {
+    public void setProduct(City product) {
         this.product = product;
     }
 

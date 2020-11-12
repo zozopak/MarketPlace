@@ -5,7 +5,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 public class AppScope {
     public static void main(String[] args) {
-        ApplicationContext context = new AnnotationConfigApplicationContext(ConfigSCope.class);
+        ApplicationContext context = new AnnotationConfigApplicationContext(ConfigDI.class);
         UserScope user = (UserScope) context.getBean("user1");
         user.setName("ali");
         user.setLastName("esmaili");
