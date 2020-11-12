@@ -2,10 +2,8 @@ package com.mapsa;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Scope;
 
 @Configuration
-@ComponentScan(basePackages = {"com.mapsa"})
-@Scope(value = "prototype")
-public class Conf {
+@ComponentScan(basePackages = "com.mapsa")
+public class SpringConfig {
 }

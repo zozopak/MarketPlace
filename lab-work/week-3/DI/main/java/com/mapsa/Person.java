@@ -1,12 +1,15 @@
 package com.mapsa;
 
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-@Component(value = "myuser")
-
-public class MyUser {
+@Component(value = "person")
+public class Person {
     private String name;
-    private String lastname;
+    private  String lastname;
+    @Autowired
+    private Book book;
 
     public String getName() {
         return name;
@@ -24,11 +27,20 @@ public class MyUser {
         this.lastname = lastname;
     }
 
+    public Book getBook() {
+        return book;
+    }
+
+    public void setBook(Book book) {
+        this.book = book;
+    }
+
     @Override
     public String toString() {
-        return "MyUser{" +
+        return "Person{" +
                 "name='" + name + '\'' +
                 ", lastname='" + lastname + '\'' +
+                ", book=" + book +
                 '}';
     }
 }

@@ -2,11 +2,10 @@ package com.mapsa;
 
 import org.springframework.stereotype.Component;
 
-@Component(value = "myuser")
-
-public class MyUser {
+@Component(value = "book")
+public class Book {
     private String name;
-    private String lastname;
+    private String author;
 
     public String getName() {
         return name;
@@ -16,19 +15,19 @@ public class MyUser {
         this.name = name;
     }
 
-    public String getLastname() {
-        return lastname;
+    public String getAuthor() {
+        return author;
     }
 
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
+    public void setAuthor(String author) {
+        this.author = author;
     }
 
     @Override
     public String toString() {
-        return "MyUser{" +
+        return "Book{" +
                 "name='" + name + '\'' +
-                ", lastname='" + lastname + '\'' +
+                ", author='" + author + '\'' +
                 '}';
     }
 }
