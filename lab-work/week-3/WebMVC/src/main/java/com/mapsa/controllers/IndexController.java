@@ -1,7 +1,6 @@
 package com.mapsa.controllers;
 
 
-
 import com.mapsa.modells.Person;
 import com.mapsa.service.IndexService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,21 +12,24 @@ import java.util.List;
 
 @Controller
 public class IndexController {
-   @Autowired
-  public IndexService indexService;
+
+    @Autowired
+    public IndexService indexService;
+
 
     @RequestMapping("/")
-     public String getIndex(){
+    public String getIndex() {
 
-         return "index";
-     }
-     @RequestMapping("/users")
-     public String getUsers(Model model){
-        IndexService indexService=new IndexService();
-       List<Person>users=indexService.getPersons();
+        return "index";
+    }
 
-     model.addAttribute("users",users);
+    @RequestMapping("/persons")
+    public String getUsers(Model model) {
+
+        List<Person> persons = indexService.getPersons();
+
+        model.addAttribute("persons",persons);
 
         return "persons";
-     }
+    }
 }
