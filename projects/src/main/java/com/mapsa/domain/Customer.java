@@ -1,12 +1,14 @@
 package com.mapsa.domain;
 
+
+
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class Customer {
+public class Customer   {
     private long id;
     private long customerNumber;
     private String firstname;
@@ -33,7 +35,7 @@ public class Customer {
         return customerNumber;
     }
 
-    public void setCustomerNumber(String customerNumber) {
+    public void setCustomerNumber(long customerNumber) {
         this.customerNumber = customerNumber;
     }
 
