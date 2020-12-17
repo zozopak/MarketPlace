@@ -34,6 +34,6 @@ public class CategoryController {
     public String index(Model model){
         List<Category> list=categoryRepository.findAll();
         model.addAttribute("list",list);
-        return "c";
+        return "category";
     }
 }
