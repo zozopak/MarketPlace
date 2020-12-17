@@ -7,36 +7,36 @@
 <body>
 
 
-<!--/*@thymesVar id="list" type=""*/-->
-<div th:switch="${list}">
 
- <div>
-    <h2  th:case="null">No Category yet!!</h2>
-    <div th:case="*">
-        <h2>Category</h2>
-        <table>
-            <thead>
-              <tr>
-                 <th>Status</th>
-                 <th>Remarks</th>
-                 <th>Delete</th>
-              </tr>
-            </thead>
-            <tbody>
-               <tr th:each="category:${list}">
-                 <td th:text="${category.status}"></td>
-                  <td th:text="${category.remarks}"></td>
-                  <td><a th:href="@{/category/delete/{id}(id=${category.id})} ">Delete</a></td>
+ <div th:switch="${list}">
+     <div>
+        <h2 th:case="null">No Category yet!!</h2>
+        <div th:case="*">
+            <h2>Category</h2>
+            <table>
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Status</th>
+                    <th>Remarks</th>
+                    <th>Delete</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="category:${list}">
+                    <td th:text="${category.id}"></td>
+                    <td th:text="${category.status}"></td>
+                    <td th:text="${category.remarks}"></td>
+                    <td><a th:href="@{/category/delete/{id}(id=${category.id})} ">Delete</a></td>
 
                 </tr>
-            </tbody>
-
+                </tbody>
 
 
             </table>
         </div>
-
- </div>
+        <a href="/category/register">Add new Category</a>
+    </div>
 </div>
 </body>
 </html>
