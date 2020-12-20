@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/category")
@@ -22,16 +23,16 @@ public class CategoryController {
 
     @GetMapping
     public String index(Model model){
-        List<Category> list=categoryRepository.findAll();
-       model.addAttribute("list",list);
+        List<Category> lists=categoryRepository.findAll();
+       model.addAttribute("all",lists);
         return "category";
     }
 
     @PostMapping("/add")
     public String add( Category category,Model model){
          categoryRepository.save(category);
-         List<Category> list=categoryRepository.findAll();
-         model.addAttribute("list",list);
+         List<Category> lists=categoryRepository.findAll();
+         model.addAttribute("all",lists);
          return "redirect:/category";
     }
     @GetMapping("/register")
@@ -43,9 +44,22 @@ public class CategoryController {
     @GetMapping("/delete/{id}")
     public String delete(@PathVariable long id,Model model){
        categoryRepository.deleteById(id);
-        List<Category> list=categoryRepository.findAll();
-        model.addAttribute("list",list);
+        List<Category> lists=categoryRepository.findAll();
+        model.addAttribute("all",lists);
         return "redirect:/category";
+    }
+ @GetMapping("/edit/{id}")
+    public String edit(@PathVariable long id,Model model){
+        Category category= categoryRepository.findById(id);
+        model.addAttribute("category",category);
+         return "edit-category";
+
+    }
+    @PostMapping("/update/{id}")
+    public String update(@PathVariable long id ,Category category){
+         categoryRepository.save(category);
+         return "redirect:/category";
+
     }
 
 

@@ -7,7 +7,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "ADRESS")
 @ToString
-public class Address {
+public class Adress {
 
     private long id;
     private String province;
@@ -105,7 +105,7 @@ public class Address {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Address address = (Address) o;
+        Adress address = (Adress) o;
 
         if (id != address.id) return false;
         if (lockVersion != address.lockVersion) return false;

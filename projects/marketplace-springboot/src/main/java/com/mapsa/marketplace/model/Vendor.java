@@ -17,7 +17,7 @@ public class Vendor {
     private String email;
     private String remarks;
     private long lockVersion;
-    private Collection<Address> adressesById;
+    private Collection<Adress> adressesById;
     private Collection<Lineitem> lineitemsById;
 
     @Id
@@ -145,11 +145,11 @@ public class Vendor {
     }
 
     @OneToMany(mappedBy = "vendorByVendorId")
-    public Collection<Address> getAdressesById() {
+    public Collection<Adress> getAdressesById() {
         return adressesById;
     }
 
-    public void setAdressesById(Collection<Address> adressesById) {
+    public void setAdressesById(Collection<Adress> adressesById) {
         this.adressesById = adressesById;
     }
 

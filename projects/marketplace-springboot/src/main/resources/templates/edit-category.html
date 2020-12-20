@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="#" th:action="@{/category/update/{id}(id=${category.id})}" method="post" th:object="${category}">
+    <label for="id" >Id</label>
+    <input type="text" th:field="*{id}" id="id" placeholder="status"/>
+    <label for="status" >Status</label>
+    <input type="text" th:field="*{status}" id="status" placeholder="status"/>
+    <label for="remarks" >Status</label>
+    <input type="text" th:field="*{remarks}" id="remarks" placeholder="remarks"/>
+    <input type="submit" value="update">
+</form>
+</body>
+</html>

@@ -8,12 +8,15 @@
 
 
 
- <div th:switch="${list}">
-     <div>
+
+<!--/*@thymesVar id="all" type=""*/-->
+<div th:switch="${all}">
+
         <h2 th:case="null">No Category yet!!</h2>
+
         <div th:case="*">
-            <h2>Category</h2>
-            <table>
+             <h2>Category</h2>
+             <table>
                 <thead>
                 <tr>
                     <th>ID</th>
@@ -23,11 +26,12 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr th:each="category:${list}">
+                <tr th:each="category:${all}">
                     <td th:text="${category.id}"></td>
                     <td th:text="${category.status}"></td>
                     <td th:text="${category.remarks}"></td>
                     <td><a th:href="@{/category/delete/{id}(id=${category.id})} ">Delete</a></td>
+                    <td><a th:href="@{/category/edit/{id}(id=${category.id})} ">Edit</a></td>
 
                 </tr>
                 </tbody>
@@ -36,7 +40,7 @@
             </table>
         </div>
         <a href="/category/register">Add new Category</a>
-    </div>
+
 </div>
 </body>
 </html>

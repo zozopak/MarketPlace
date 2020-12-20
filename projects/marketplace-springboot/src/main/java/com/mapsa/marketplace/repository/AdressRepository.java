@@ -1,11 +1,11 @@
 package com.mapsa.marketplace.repository;
 
-import com.mapsa.marketplace.model.Address;
+import com.mapsa.marketplace.model.Adress;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 //@RepositoryRestResource
 @Repository
-public interface AddressRepository extends JpaRepository<Address,Long> {
+public interface AdressRepository extends JpaRepository<Adress,Long> {
 
 }
