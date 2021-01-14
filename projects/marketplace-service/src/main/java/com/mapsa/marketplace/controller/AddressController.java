@@ -7,7 +7,6 @@ import com.github.fge.jsonpatch.JsonPatch;
 import com.github.fge.jsonpatch.JsonPatchException;
 import com.mapsa.marketplace.model.Address;
 import com.mapsa.marketplace.model.Bill;
-import com.mapsa.marketplace.model.Category;
 import com.mapsa.marketplace.repository.AddressRepository;
 import com.mapsa.marketplace.repository.BillRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,12 +49,10 @@ public class AddressController {
     public Optional<Address> getOne(@PathVariable long id ){
         return addressRepository.findById(id);
     }
-
-
     @PatchMapping(path="/{id}",consumes = "application/json-patch+json")
     public ResponseEntity<Address> updateAddress(@PathVariable long id, @RequestBody JsonPatch patch){
         try {
-           Address address = addressRepository.findById(id).orElseThrow(NullPointerException::new);
+            Address address = addressRepository.findById(id).orElseThrow(NullPointerException::new);
 
             Address addressPatched = applyPatchToAddress(patch, address);
 

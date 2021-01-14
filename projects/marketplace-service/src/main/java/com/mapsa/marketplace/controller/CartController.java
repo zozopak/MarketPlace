@@ -5,7 +5,6 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.fge.jsonpatch.JsonPatch;
 import com.github.fge.jsonpatch.JsonPatchException;
-import com.mapsa.marketplace.model.Bill;
 import com.mapsa.marketplace.model.Cart;
 import com.mapsa.marketplace.repository.CartRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,14 +49,14 @@ public class CartController {
 
     @GetMapping("/{id}")
     public Optional<Cart> getOne(@PathVariable long id) {
-
         return cartRepository.findById(id);
     }
+
 
     @PatchMapping(value = "/{id}",consumes = "application/json-patch+json")
     public ResponseEntity<Cart> updateCart(@PathVariable long id, JsonPatch patch){
         try {
-        Cart cart = cartRepository.findById(id).orElseThrow(NullPointerException::new);
+            Cart cart = cartRepository.findById(id).orElseThrow(NullPointerException::new);
             Cart cartPatched = applyPatchToCart(patch, cart);
             cartRepository.save(cartPatched);
             return ResponseEntity.ok(cartPatched);

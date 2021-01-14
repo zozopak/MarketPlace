@@ -41,7 +41,7 @@ public class BillController {
         billRepository.deleteById(id);
     }
 
-    @GetMapping("/get/{id}")
+    @GetMapping("/{id}")
     public Optional<Bill> getOne(@PathVariable long id ){
         return billRepository.findById(id);
     }
@@ -65,5 +65,6 @@ public class BillController {
         JsonNode patched=patch.apply(objectMapper.convertValue(bill,JsonNode.class));
         return objectMapper.treeToValue(patched,Bill.class);
     }
+
 
 }
